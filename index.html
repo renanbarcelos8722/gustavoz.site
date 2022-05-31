@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title></title>
+    <style>
+        html {
+            font-family: 'Roboto';
+            overflow-x: hidden;
+        }
+
+        body {
+            background: black;
+        }
+
+        a {
+            color: white;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 10px;
+            font-style: normal;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: green;
+            border-style: none;
+            color: white;
+            font-size: 15px;
+            border-radius: 50px 50px 50px 50px;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .btn-first {
+            height: 40px;
+        }
+
+
+        main {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            text-justify: center;
+            align-items: center;
+            align-content: center;
+
+        }
+
+        .divider {
+            margin-top: 70px;
+            margin-bottom: 70px;
+            background-color: gray;
+            width: 100vw;
+            height: 0.009rem;
+        }
+
+        p {
+            color: white;
+            font-size: 8px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p style="font-size: 13px;font-weight: bold;">Ligue o som para ouvir &nbsp;<i class="fas fa-volume-up"></i></p>
+        <div style="display: flex;justify-content: center;width:85vw" id="container-video">
+            <script type="text/javascript" id="scr_62700158c3436c0009118ff4">
+            </script>
+        </div>
+        <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top: 40px;">
+            <button id="botao-venda" onclick="openLink()" class="btn-first" style="display: none;"></button>
+        </div>
+
+        <div style="margin-top: 50px;display: flex;justify-content: center;justify-items: center;align-items: center;">
+            <a style="color:rgba(122,122,122,.77);font-weight: bold" id="termos" href="#" target="_blank">Termos de
+                uso</a>
+            <span style="color:rgba(122,122,122,.77);">|</span>
+            <a style="color:rgba(122,122,122,.77);font-weight: bold" id="politica" href="#" target="_blank">Política de
+                privacidade</a>
+        </div>
+        <div style="color:rgba(122,122,122,.77);margin-top: 20px;">
+            <span style="font-size: 100%;">Contato: admin@gustavox.xyz</span>
+        </div>
+        <div style="margin-top: 20px;">
+            <p style="color:rgba(122,122,122,.77);font-weight: bold;font-size: 10px;">
+                COPYRIGHT 2022 – MÉTODO GV ® CNPJ: 34.317.664/0001-09
+            </p>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+    <script>
+        var pageAttrs = {
+            tituloPagina: "Método GV",
+            corFundoBotao: "green",
+            textoPrimeiroBotao: "Adicionar ao carrinho",
+            linkVideo: "https://scripts.converteai.net/17067df1-523d-4978-8687-1643679e30c5/players/6290d241460e6a000959f37b/player.js",
+            linkTermosDeUso: "https://gustavoz.site/termos/",
+            linkPoliticaDePrivacidade: "https://gustavoz.site/politicas/",
+            linkBotao: "https://checkout.abmex.com.br/0KRBBRctrs/nqBejarIBZAOkDU",
+            delayBotao: 7
+        };
+
+
+        window.onload = function () {
+            document.title = pageAttrs.tituloPagina;
+            $(".btn-first").css("background-color", pageAttrs.corFundoBotao);
+            $(".btn-first").html(pageAttrs.textoPrimeiroBotao);
+
+            $("#termos").attr("href", pageAttrs.linkTermosDeUso)
+            $("#politica").attr("href", pageAttrs.linkTermosDeUso)
+
+            var a = document.createElement("script");
+            a.id = "scr_" + pageAttrs.linkVideo.split("/")[5]
+            document.querySelector('#container-video').appendChild(a)
+
+            var s = document.createElement("script");
+            s.src = pageAttrs.linkVideo, s.async = !0, document.head.appendChild(s);
+
+            setTimeout(() => {
+                $("#botao-venda").show();
+            }, pageAttrs.delayBotao * 1000)
+        }
+        function openLink() {
+            window.open(pageAttrs.linkBotao)
+        }
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+        integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
